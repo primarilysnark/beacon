@@ -1,7 +1,24 @@
+import { Component } from 'react';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
 import { render } from 'react-dom';
-import App from './components/app';
+import { rootReducer } from './reducers';
+import AppContainer from './containers/app';
+import thunkMiddleware from 'redux-thunk';
+
+class Beacon extends Component {
+  store = applyMiddleware(thunkMiddleware)(createStore)(rootReducer);
+
+  render() {
+    return (
+      <Provider store={this.store}>
+        <AppContainer />
+      </Provider>
+    );
+  }
+}
 
 render(
-  <App />,
+  <Beacon />,
   document.getElementById('app')
 );
