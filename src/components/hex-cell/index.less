@@ -1,0 +1,72 @@
+.hex-cell {
+  @hexSize: 30px;
+  @hexColor: rgba(255, 255, 255, 0.1);
+  @highlightHexColor: rgba(255, 255, 255, 0.2);
+
+  background-color: @hexColor;
+  color: white;
+  cursor: pointer;
+  float: left;
+  height: @hexSize;
+  margin: (@hexSize / 2 + 2) 0 0 4px;
+  position: relative;
+  text-align: center;
+  width: @hexSize * 1.73;
+
+  &__coordinate {
+    font: 10px 'Helvetica Neue';
+    position: absolute;
+
+    &--x {
+      right: 6px;
+      top: 0;
+    }
+
+    &--y {
+      left: 6px;
+      top: 0;
+    }
+
+    &--z {
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:after {
+    border-top: @hexSize / 2 solid @hexColor;
+    border-left: @hexSize * 0.86 solid transparent;
+    border-right: @hexSize * 0.86 solid transparent;
+    bottom: -@hexSize / 2;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &:before {
+    border-bottom: @hexSize / 2 solid @hexColor;
+    border-left: @hexSize * 0.86 solid transparent;
+    border-right: @hexSize * 0.86 solid transparent;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: -@hexSize / 2;
+    width: 0;
+  }
+
+  &:hover {
+    background-color: @highlightHexColor;
+
+    &:after {
+      border-top-color: @highlightHexColor;
+    }
+
+    &:before {
+      border-bottom-color: @highlightHexColor;
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
+    "max-len": 0,
     "react/prefer-stateless-function": 0,
     "react/react-in-jsx-scope": 0,
   },

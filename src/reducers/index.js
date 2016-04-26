@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import * as titleReducers from './title-reducers';
+import * as mapReducers from './map-reducers';
 
 export const rootReducer = combineReducers({
-  ...titleReducers,
+  ...mapReducers,
 });
