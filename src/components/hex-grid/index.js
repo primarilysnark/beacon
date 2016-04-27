@@ -15,17 +15,18 @@ export default class HexGrid extends Component {
 
   render() {
     const hexRows = [];
-    const rowOffset = Math.ceil(this.props.height / 2) - this.props.center.z - 1;
+    const rowOffset = Math.ceil(this.props.height / 2) - 1;
 
     for (let index = 0; index < this.props.height; index++) {
       const isEven = index % 2 === 1;
 
       hexRows.push(<HexRow
         center={this.props.center}
+        height={this.props.height}
         isEven={isEven}
         key={index}
         width={this.props.width - isEven}
-        z={index - rowOffset}
+        z={index - rowOffset + this.props.center.z}
       />);
     }
 

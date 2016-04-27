@@ -16,6 +16,7 @@
   &__coordinate {
     font: 10px 'Helvetica Neue';
     position: absolute;
+    z-index: 1;
 
     &--x {
       right: 6px;
@@ -56,6 +57,18 @@
     position: absolute;
     top: -@hexSize / 2;
     width: 0;
+  }
+
+  &--active {
+    background: blue;
+
+    &:after {
+      border-top-color: blue;
+    }
+
+    &:before {
+      border-bottom-color: blue;
+    }
   }
 
   &:hover {
