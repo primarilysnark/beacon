@@ -19,6 +19,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    this.resizeHexGrid();
+
+    window.addEventListener('resize', this.resizeHexGrid, false);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('resize', this.resizeHexGrid);
+  }
+
+  resizeHexGrid = () => {
     this.setState({
       height: Math.floor(window.innerHeight / HEX_INCREMENTAL_HEIGHT) - 1,
       width: Math.floor(window.innerWidth / HEX_WIDTH),
