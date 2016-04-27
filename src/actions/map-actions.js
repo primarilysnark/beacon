@@ -1,10 +1,8 @@
 import { setActiveTileType } from './action-types';
 
-export function setActiveTile(x, y, z) {
+export function setActiveTile(coordinates) {
   return {
     type: setActiveTileType,
-    x,
-    y,
-    z,
+    coordinates,
   };
 }

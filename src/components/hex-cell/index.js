@@ -16,7 +16,7 @@ export default class HexCell extends Component {
     setActiveTile: PropTypes.func.isRequired,
   };
 
-  setAsActiveTile = () => this.props.setActiveTile(this.props.coordinates.x, this.props.coordinates.y, this.props.coordinates.z);
+  setAsActiveTile = () => this.props.setActiveTile(this.props.coordinates);
 
   render() {
     const isActive = this.props.active.x === this.props.coordinates.x ||

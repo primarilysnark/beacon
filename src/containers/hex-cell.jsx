@@ -10,7 +10,7 @@ function mapStateToProps({ map }) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setActiveTile: (x, y, z) => dispatch(setActiveTile(x, y, z)),
+    setActiveTile: (coordinates) => dispatch(setActiveTile(coordinates)),
   };
 }
 

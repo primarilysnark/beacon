@@ -20,11 +20,7 @@ export function map(state = DEFAULT_MAP, action) {
     case setActiveTileType:
       return {
         ...state,
-        active: {
-          x: action.x,
-          y: action.y,
-          z: action.z,
-        },
+        active: action.coordinates,
       };
 
     default:
