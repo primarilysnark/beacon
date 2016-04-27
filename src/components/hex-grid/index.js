@@ -26,7 +26,7 @@ export default class HexGrid extends Component {
         isEven={isEven}
         key={index}
         width={this.props.width - isEven}
-        z={index - rowOffset + this.props.center.z}
+        zAbsolute={index - rowOffset}
       />);
     }
 
