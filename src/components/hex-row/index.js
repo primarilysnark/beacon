@@ -21,6 +21,10 @@ export default class HexRow extends Component {
       xOffset += 1;
     }
 
+    if (this.props.isEven && this.props.width % 2 === 1) {
+      xOffset += 1;
+    }
+
     return (
       <div className={`hex-row ${this.props.isEven ? ' hex-row--even' : ''}`}>
         {Array.apply(null, {
