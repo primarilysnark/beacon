@@ -3,7 +3,7 @@ import { Component, PropTypes } from 'react';
 import HexGrid from '../hex-grid';
 import './index.less';
 
-const HEX_WIDTH = 56;
+const HEX_WIDTH = 57;
 const HEX_INCREMENTAL_HEIGHT = 45;
 
 export default class App extends Component {
