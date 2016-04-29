@@ -13,6 +13,12 @@ const DEFAULT_MAP = {
   },
 };
 
+const DEFAULT_TILES = {
+  '0,0,0': {
+    label: 'Lothal',
+  },
+};
+
 export function map(state = DEFAULT_MAP, action) {
   const { type } = action;
 
@@ -23,6 +29,15 @@ export function map(state = DEFAULT_MAP, action) {
         active: action.coordinates,
       };
 
+    default:
+      return state;
+  }
+}
+
+export function tiles(state = DEFAULT_TILES, action) {
+  const { type } = action;
+
+  switch (type) {
     default:
       return state;
   }

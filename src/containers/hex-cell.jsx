@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { setActiveTile } from '../actions';
 import HexCell from '../components/hex-cell';
 
-function mapStateToProps({ map }) {
+function mapStateToProps({ map, tiles }) {
   return {
     active: map.active,
+    tiles,
   };
 }
 
