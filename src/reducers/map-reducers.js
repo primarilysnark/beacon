@@ -1,25 +1,6 @@
 import { setActiveTileType } from '../actions/action-types';
 
-const DEFAULT_MAP = {
-  active: {
-    x: 0,
-    y: 0,
-    z: 0,
-  },
-  center: {
-    x: 0,
-    y: 0,
-    z: 0,
-  },
-};
-
-const DEFAULT_TILES = {
-  '0,0,0': {
-    label: 'Lothal',
-  },
-};
-
-export function map(state = DEFAULT_MAP, action) {
+export function map(state = {}, action) {
   const { type } = action;
 
   switch (type) {
@@ -34,7 +15,7 @@ export function map(state = DEFAULT_MAP, action) {
   }
 }
 
-export function tiles(state = DEFAULT_TILES, action) {
+export function tiles(state = {}, action) {
   const { type } = action;
 
   switch (type) {
