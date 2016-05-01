@@ -70,6 +70,12 @@ export default class App extends Component {
         coordinates.z--;
         break;
 
+      case 'KeyH':
+        coordinates.x = 0;
+        coordinates.y = 0;
+        coordinates.z = 0;
+        break;
+
       case 'KeyQ':
         coordinates.y++;
         coordinates.z--;
