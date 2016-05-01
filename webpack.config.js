@@ -15,7 +15,7 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.(jpg|jpeg)$/,
+        test: /\.(jpg|jpeg|png)$/,
         loader: 'url-loader',
         query: {
           limit: 100000

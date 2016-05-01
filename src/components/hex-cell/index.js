@@ -3,6 +3,7 @@ import './index.less';
 
 const EMPTY_TILE = {
   label: null,
+  hash: null,
 };
 
 export default class HexCell extends Component {
@@ -26,18 +27,19 @@ export default class HexCell extends Component {
   setAsActiveTile = () => this.props.setActiveTile(this.props.coordinates);
 
   render() {
-    const isActive = this.props.active.x === this.props.coordinates.x ||
-      this.props.active.y === this.props.coordinates.y ||
-      this.props.active.z === this.props.coordinates.z;
-
     const tile = this.props.tiles[`${this.props.coordinates.x},${this.props.coordinates.y},${this.props.coordinates.z}`] || EMPTY_TILE;
+    const hexStyle = tile.hash == null ? null : {
+      backgroundImage: `url(images/planets/${tile.hash}.png)`,
+    };
 
     return (
-      <div className={`hex-cell ${isActive ? ' hex-cell--active' : ''}`} onMouseOver={this.setAsActiveTile}>
+      <div className="hex-cell" style={hexStyle} onMouseOver={this.setAsActiveTile}>
         <div className="hex-cell__coordinate hex-cell__coordinate--x">{this.props.coordinates.x}</div>
         <div className="hex-cell__coordinate hex-cell__coordinate--y">{this.props.coordinates.y}</div>
         <div className="hex-cell__coordinate hex-cell__coordinate--z">{this.props.coordinates.z}</div>
-        {tile.label}
+        {tile.label == null ? null : (
+          <div className="hex-cell__label">{tile.label}</div>
+        )}
       </div>
     );
   }

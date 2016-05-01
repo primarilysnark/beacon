@@ -1,38 +1,47 @@
 {
   "-7,6,1": {
     "label": "Star Cluster B",
-    "kind": "cluster"
+    "kind": "cluster",
+    "hash": "STARCLUSTER"
   },
   "-5,-1,6": {
     "label": "Kurranis",
-    "kind": "system"
+    "kind": "system",
+    "hash": "KURRANIS"
   },
   "-4,0,4": {
     "label": "Pestilence",
-    "kind": "system"
+    "kind": "system",
+    "hash": "PESTILENCE"
   },
   "-3,3,0": {
     "label": "Star Cluster A",
-    "kind": "cluster"
+    "kind": "cluster",
+    "hash": "STARCLUSTER"
   },
   "-2,-4,6": {
     "label": "Emerald",
-    "kind": "system"
+    "kind": "system",
+    "hash": "EMERALD"
   },
   "-1,5,-4": {
     "label": "Deadrock",
-    "kind": "system"
+    "kind": "system",
+    "hash": "DEADROCK"
   },
   "0,0,0": {
     "label": "Lothal",
-    "kind": "system"
+    "kind": "system",
+    "hash": "LOTHAL"
   },
   "3,-5,2": {
     "label": "Callous",
-    "kind": "system"
+    "kind": "system",
+    "hash": "CALLOUS"
   },
   "6,-4,-2": {
     "label": "Hope",
-    "kind": "system"
+    "kind": "system",
+    "hash": "HOPE"
   }
 }
