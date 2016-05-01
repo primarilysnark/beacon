@@ -1,5 +1,38 @@
 {
+  "-7,6,1": {
+    "label": "Star Cluster B",
+    "kind": "cluster"
+  },
+  "-5,-1,6": {
+    "label": "Kurranis",
+    "kind": "system"
+  },
+  "-4,0,4": {
+    "label": "Pestilence",
+    "kind": "system"
+  },
+  "-3,3,0": {
+    "label": "Star Cluster A",
+    "kind": "cluster"
+  },
+  "-2,-4,6": {
+    "label": "Emerald",
+    "kind": "system"
+  },
+  "-1,5,-4": {
+    "label": "Deadrock",
+    "kind": "system"
+  },
   "0,0,0": {
-    "label": "Lothal"
+    "label": "Lothal",
+    "kind": "system"
+  },
+  "3,-5,2": {
+    "label": "Callous",
+    "kind": "system"
+  },
+  "6,-4,-2": {
+    "label": "Hope",
+    "kind": "system"
   }
 }
