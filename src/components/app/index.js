@@ -9,8 +9,13 @@ const HEX_INCREMENTAL_HEIGHT = 45;
 export default class App extends Component {
   static propTypes = {
     map: PropTypes.shape({
-      center: PropTypes.object.isRequired,
+      center: PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired,
+        z: PropTypes.number.isRequired,
+      }).isRequired,
     }).isRequired,
+    setCenterTile: PropTypes.func.isRequired,
   };
 
   state = {
@@ -22,10 +27,12 @@ export default class App extends Component {
     this.resizeHexGrid();
 
     window.addEventListener('resize', this.resizeHexGrid, false);
+    window.addEventListener('keypress', this.shiftMap, false);
   }
 
   componentWillUnmount() {
-    window.addEventListener('resize', this.resizeHexGrid);
+    window.removeEventListener('resize', this.resizeHexGrid);
+    window.removeEventListener('keypress', this.resizeHexGrid);
   }
 
   resizeHexGrid = () => {
@@ -33,6 +40,50 @@ export default class App extends Component {
       height: Math.floor(window.innerHeight / HEX_INCREMENTAL_HEIGHT) - 1,
       width: Math.floor(window.innerWidth / HEX_WIDTH),
     });
+  }
+
+  shiftMap = (event) => {
+    const coordinates = {
+      x: this.props.map.center.x,
+      y: this.props.map.center.y,
+      z: this.props.map.center.z,
+    };
+
+    switch (event.code) {
+      case 'KeyA':
+        coordinates.x--;
+        coordinates.y++;
+        break;
+
+      case 'KeyC':
+        coordinates.y--;
+        coordinates.z++;
+        break;
+
+      case 'KeyD':
+        coordinates.x++;
+        coordinates.y--;
+        break;
+
+      case 'KeyE':
+        coordinates.x++;
+        coordinates.z--;
+        break;
+
+      case 'KeyQ':
+        coordinates.y++;
+        coordinates.z--;
+        break;
+
+      case 'KeyZ':
+        coordinates.x--;
+        coordinates.z++;
+        break;
+
+      default:
+    }
+
+    this.props.setCenterTile(coordinates);
   }
 
   render() {

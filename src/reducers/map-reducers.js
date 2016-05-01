@@ -1,4 +1,4 @@
-import { setActiveTileType } from '../actions/action-types';
+import { setActiveTileType, setCenterTileType } from '../actions/action-types';
 
 export function map(state = {}, action) {
   const { type } = action;
@@ -8,6 +8,12 @@ export function map(state = {}, action) {
       return {
         ...state,
         active: action.coordinates,
+      };
+
+    case setCenterTileType:
+      return {
+        ...state,
+        center: action.coordinates,
       };
 
     default:

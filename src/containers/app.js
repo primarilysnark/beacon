@@ -1,8 +1,15 @@
 import { connect } from 'react-redux';
+import { setCenterTile } from '../actions';
 import App from '../components/app';
 
 function mapStateToProps({ map }) {
   return { map };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    setCenterTile: (coordinates) => dispatch(setCenterTile(coordinates)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
