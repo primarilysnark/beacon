@@ -4,7 +4,7 @@ import HexCell from '../components/hex-cell';
 
 function mapStateToProps({ map, tiles }) {
   return {
-    active: map.active,
+    center: map.center,
     tiles,
   };
 }

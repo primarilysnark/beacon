@@ -1,5 +1,4 @@
 .hex-cell {
-  @hexSize: 30px;
   @hexColor: #352b31;
   @highlightHexColor: #96cf85;
 
@@ -9,11 +8,11 @@
   color: white;
   cursor: pointer;
   float: left;
-  height: @hexSize;
-  margin: (@hexSize / 2 + 2) 0 0 4px;
+  height: 30px;
+  margin: 18px 0 0 4px;
   position: relative;
   text-align: center;
-  width: @hexSize * 1.73;
+  width: 52px;
 
   &__coordinate {
     display: none;
@@ -50,10 +49,10 @@
   }
 
   &:after {
-    border-top: @hexSize / 2 solid @hexColor;
-    border-left: @hexSize * 0.86 solid transparent;
-    border-right: @hexSize * 0.86 solid transparent;
-    bottom: -@hexSize / 2;
+    border-top: 15px solid @hexColor;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    bottom: -15px;
     content: '';
     display: block;
     left: 0;
@@ -62,30 +61,56 @@
   }
 
   &:before {
-    border-bottom: @hexSize / 2 solid @hexColor;
-    border-left: @hexSize * 0.86 solid transparent;
-    border-right: @hexSize * 0.86 solid transparent;
+    border-bottom: 15px solid @hexColor;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
     content: '';
     display: block;
     left: 0;
     position: absolute;
-    top: -@hexSize / 2;
+    top: -15px;
     width: 0;
   }
 
-  &:hover {
-    background-color: @highlightHexColor;
+  &__outline {
+    @outlineHexColor: white;
 
-    .hex-cell__coordinate {
-      display: block;
-    }
+    background-color: @outlineHexColor;
+    background-size: 80px;
+    background-position: center;
+    color: white;
+    cursor: pointer;
+    height: 32px;
+    left: -7px;
+    margin: 18px 0 0 4px;
+    position: absolute;
+    text-align: center;
+    top: -19px;
+    width: 58px;
+    z-index: -1;
 
     &:after {
-      border-top-color: @highlightHexColor;
+      border-top: 17px solid @outlineHexColor;
+      border-left: 29px solid transparent;
+      border-right: 29px solid transparent;
+      bottom: -17px;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      width: 0;
     }
 
     &:before {
-      border-bottom-color: @highlightHexColor;
+      border-bottom: 17px solid @outlineHexColor;
+      border-left: 29px solid transparent;
+      border-right: 29px solid transparent;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      top: -17px;
+      width: 0;
     }
   }
 }

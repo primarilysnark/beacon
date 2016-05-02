@@ -8,7 +8,7 @@ const EMPTY_TILE = {
 
 export default class HexCell extends Component {
   static propTypes = {
-    active: PropTypes.shape({
+    center: PropTypes.shape({
       x: PropTypes.number.isRequired,
       y: PropTypes.number.isRequired,
       z: PropTypes.number.isRequired,
@@ -32,6 +32,10 @@ export default class HexCell extends Component {
       backgroundImage: `url(images/planets/${tile.hash}.png)`,
     };
 
+    const isCenter = this.props.center.x === this.props.coordinates.x &&
+      this.props.center.y === this.props.coordinates.y &&
+      this.props.center.z === this.props.coordinates.z;
+
     return (
       <div className="hex-cell" style={hexStyle} onMouseOver={this.setAsActiveTile}>
         <div className="hex-cell__coordinate hex-cell__coordinate--x">{this.props.coordinates.x}</div>
@@ -39,6 +43,9 @@ export default class HexCell extends Component {
         <div className="hex-cell__coordinate hex-cell__coordinate--z">{this.props.coordinates.z}</div>
         {tile.label == null ? null : (
           <div className="hex-cell__label">{tile.label}</div>
+        )}
+        {!isCenter ? null : (
+          <div className="hex-cell__outline" />
         )}
       </div>
     );
