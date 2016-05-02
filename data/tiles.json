@@ -1,43 +1,255 @@
 {
+  "-10,3,7": {
+    "edges": {
+      "topRight": true
+    }
+  },
+  "-9,3,6": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
+  "-8,3,5": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
+  "-7,3,4": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
   "-7,6,1": {
     "label": "Star Cluster B",
     "kind": "cluster",
     "hash": "STARCLUSTER"
+  },
+  "-6,3,3": {
+    "label": "Goreal",
+    "kind": "system",
+    "hash": "GOREAL"
+  },
+  "-5,-5,10": {
+    "edges": {
+      "topLeft": true
+    }
+  },
+  "-5,-4,9": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "-5,-3,8": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "-5,-2,7": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true,
+      "topRight": true
+    }
+  },
+  "-5,0,5": {
+    "edges": {
+      "bottomRight": true,
+      "topRight": true
+    }
+  },
+  "-5,3,2": {
+    "edges": {
+      "bottomLeft": true,
+      "centerRight": true
+    }
   },
   "-5,-1,6": {
     "label": "Kurranis",
     "kind": "system",
     "hash": "KURRANIS"
   },
+  "-4,-2,6": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
+  "-4,2,2": {
+    "edges": {
+      "centerLeft": true,
+      "centerRight": true
+    }
+  },
+  "-4,-1,5": {
+    "edges": {
+      "centerRight": true,
+      "topLeft": true
+    }
+  },
+  "-4,1,3": {
+    "edges": {
+      "bottomRight": true,
+      "topRight": true
+    }
+  },
   "-4,0,4": {
     "label": "Pestilence",
     "kind": "system",
     "hash": "PESTILENCE"
+  },
+  "-3,-3,6": {
+    "edges": {
+      "centerRight": true,
+      "topLeft": true
+    }
+  },
+  "-3,-2,5": {
+    "edges": {
+      "bottomRight": true,
+      "bottomLeft": true,
+      "centerLeft": true
+    }
+  },
+  "-3,1,2": {
+    "edges": {
+      "bottomLeft": true,
+      "centerLeft": true,
+      "topRight": true
+    }
   },
   "-3,3,0": {
     "label": "Star Cluster A",
     "kind": "cluster",
     "hash": "STARCLUSTER"
   },
+  "-2,1,1": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
   "-2,-4,6": {
     "label": "Emerald",
     "kind": "system",
     "hash": "EMERALD"
+  },
+  "-1,-4,5": {
+    "edges": {
+      "bottomLeft": true,
+      "topLeft": true
+    }
+  },
+  "-1,-3,4": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "-1,-2,3": {
+    "edges": {
+      "bottomRight": true,
+      "topRight": true
+    }
+  },
+  "-1,1,0": {
+    "edges": {
+      "bottomLeft": true,
+      "centerRight": true
+    }
   },
   "-1,5,-4": {
     "label": "Deadrock",
     "kind": "system",
     "hash": "DEADROCK"
   },
+  "0,-2,2": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
+  },
   "0,0,0": {
     "label": "Lothal",
     "kind": "system",
     "hash": "LOTHAL"
   },
+  "0,1,-1": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "0,2,-2": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "0,3,-3": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
+  "0,4,-4": {
+    "edges": {
+      "bottomRight": true,
+      "centerLeft": true
+    }
+  },
+  "1,-1,0": {
+    "edges": {
+      "bottomRight": true,
+      "centerLeft": true,
+      "centerRight": true
+    }
+  },
+  "1,-2,1": {
+    "edges": {
+      "bottomLeft": true,
+      "topLeft": true
+    }
+  },
+  "2,-2,0": {
+    "edges": {
+      "centerLeft": true,
+      "centerRight": true
+    }
+  },
+  "3,-3,0": {
+    "edges": {
+      "bottomRight": true,
+      "centerLeft": true,
+      "centerRight": true
+    }
+  },
+  "3,-4,1": {
+    "edges": {
+      "bottomRight": true,
+      "topLeft": true
+    }
+  },
   "3,-5,2": {
     "label": "Callous",
     "kind": "system",
     "hash": "CALLOUS"
+  },
+  "4,-4,0": {
+    "edges": {
+      "centerLeft": true,
+      "topRight": true
+    }
+  },
+  "5,-4,-1": {
+    "edges": {
+      "bottomLeft": true,
+      "topRight": true
+    }
   },
   "6,-4,-2": {
     "label": "Hope",

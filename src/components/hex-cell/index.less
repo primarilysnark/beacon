@@ -72,6 +72,50 @@
     width: 0;
   }
 
+  &__edge {
+    background: white;
+    height: 2px;
+    position: absolute;
+    width: 28px;
+    z-index: 1;
+
+    &--bottom-left {
+      left: 5px;
+      top: 26px;
+      transform: translateY(-50%) rotate(-60deg);
+    }
+
+    &--bottom-right {
+      left: 20px;
+      top: 27px;
+      transform: translateY(-50%) rotateZ(60deg);
+    }
+
+    &--center-left {
+      left: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--center-right {
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--top-right {
+      left: 19px;
+      top: 2px;
+      transform: translateY(-50%) rotateZ(-60deg);
+    }
+
+    &--top-left {
+      left: 6px;
+      top: 3px;
+      transform: translateY(-50%) rotateZ(60deg);
+    }
+  }
+
   &__outline {
     @outlineHexColor: white;
 
