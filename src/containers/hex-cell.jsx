@@ -19,51 +19,22 @@ function mapStateToProps({ map, tiles }, ownProps) {
 
     for (let pointIndex = 1; pointIndex < route.points.length; pointIndex++) {
       const currentPoint = route.points[pointIndex];
-      const hasSharedX = (pastPoint.x <= ownProps.coordinates.x && ownProps.coordinates.x <= route.points[pointIndex].x) ||
-        (pastPoint.x >= ownProps.coordinates.x && ownProps.coordinates.x >= route.points[pointIndex].x);
-      const hasSharedY = (pastPoint.y <= ownProps.coordinates.y && ownProps.coordinates.y <= route.points[pointIndex].y) ||
-        (pastPoint.y >= ownProps.coordinates.y && ownProps.coordinates.y >= route.points[pointIndex].y);
-      const hasSharedZ = (pastPoint.z <= ownProps.coordinates.z && ownProps.coordinates.z <= route.points[pointIndex].z) ||
-        (pastPoint.z >= ownProps.coordinates.z && ownProps.coordinates.z >= route.points[pointIndex].z);
+      const hasDirectionalX = ((pastPoint.x >= ownProps.coordinates.x && ownProps.coordinates.x > currentPoint.x) ||
+        (pastPoint.x < ownProps.coordinates.x && ownProps.coordinates.x <= currentPoint.x));
+      const hasDirectionalY = ((pastPoint.y >= ownProps.coordinates.y && ownProps.coordinates.y > currentPoint.y) ||
+        (pastPoint.y < ownProps.coordinates.y && ownProps.coordinates.y <= currentPoint.y));
+      const hasDirectionalZ = ((pastPoint.z >= ownProps.coordinates.z && ownProps.coordinates.z > currentPoint.z) ||
+        (pastPoint.z < ownProps.coordinates.z && ownProps.coordinates.z <= currentPoint.z));
       const isXBound = pastPoint.x === currentPoint.x && pastPoint.x === ownProps.coordinates.x;
       const isYBound = pastPoint.y === currentPoint.y && pastPoint.y === ownProps.coordinates.y;
       const isZBound = pastPoint.z === currentPoint.z && pastPoint.z === ownProps.coordinates.z;
 
-      edges.bottomLeft = edges.bottomLeft || (isYBound &&
-        hasSharedX &&
-        hasSharedZ &&
-        ownProps.coordinates.x !== currentPoint.x &&
-        ownProps.coordinates.z !== currentPoint.z);
-
-      edges.bottomRight = edges.bottomRight || (isXBound &&
-        hasSharedY &&
-        hasSharedZ &&
-        ownProps.coordinates.y !== currentPoint.y &&
-        ownProps.coordinates.z !== currentPoint.z);
-
-      edges.centerLeft = edges.centerLeft || (isZBound &&
-        hasSharedX &&
-        hasSharedY &&
-        ownProps.coordinates.x !== currentPoint.x &&
-        ownProps.coordinates.y !== currentPoint.y);
-
-      edges.centerRight = edges.centerRight || (isZBound &&
-        hasSharedX &&
-        hasSharedY &&
-        ownProps.coordinates.x !== pastPoint.x &&
-        ownProps.coordinates.y !== pastPoint.y);
-
-      edges.topLeft = edges.topLeft || (isXBound &&
-        hasSharedY &&
-        hasSharedZ &&
-        ownProps.coordinates.y !== pastPoint.y &&
-        ownProps.coordinates.z !== pastPoint.z);
-
-      edges.topRight = edges.topRight || (isYBound &&
-        hasSharedX &&
-        hasSharedZ &&
-        ownProps.coordinates.x !== pastPoint.x &&
-        ownProps.coordinates.z !== pastPoint.z);
+      edges.bottomLeft = edges.bottomLeft || (isYBound && hasDirectionalX);
+      edges.bottomRight = edges.bottomRight || (isXBound && hasDirectionalY);
+      edges.centerLeft = edges.centerLeft || (isZBound && hasDirectionalX);
+      edges.centerRight = edges.centerRight || (isZBound && hasDirectionalY);
+      edges.topLeft = edges.topLeft || (isXBound && hasDirectionalZ);
+      edges.topRight = edges.topRight || (isYBound && hasDirectionalZ);
 
       pastPoint = route.points[pointIndex];
     }
