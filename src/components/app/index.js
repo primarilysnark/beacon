@@ -32,7 +32,7 @@ export default class App extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.resizeHexGrid);
-    window.removeEventListener('keypress', this.resizeHexGrid);
+    window.removeEventListener('keypress', this.shiftMap);
   }
 
   resizeHexGrid = () => {
