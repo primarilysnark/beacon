@@ -1,11 +1,6 @@
 import { Component, PropTypes } from 'react';
 import './index.less';
 
-const EMPTY_TILE = {
-  label: null,
-  hash: null,
-};
-
 export default class HexCell extends Component {
   static propTypes = {
     center: PropTypes.shape({
@@ -26,18 +21,18 @@ export default class HexCell extends Component {
       topLeft: PropTypes.bool,
       topRight: PropTypes.bool,
     }).isRequired,
-    tiles: PropTypes.objectOf(PropTypes.shape({
-      label: PropTypes.string,
-    })).isRequired,
+    tile: PropTypes.shape({
+      hash: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
     setActiveTile: PropTypes.func.isRequired,
   };
 
   setAsActiveTile = () => this.props.setActiveTile(this.props.coordinates);
 
   render() {
-    const tile = this.props.tiles[`${this.props.coordinates.x},${this.props.coordinates.y},${this.props.coordinates.z}`] || EMPTY_TILE;
-    const hexStyle = tile.hash == null ? null : {
-      backgroundImage: `url(images/planets/${tile.hash}.png)`,
+    const hexStyle = this.props.tile == null || this.props.tile.hash == null ? null : {
+      backgroundImage: `url(images/planets/${this.props.tile.hash}.png)`,
     };
 
     const isCenter = this.props.center.x === this.props.coordinates.x &&
@@ -75,8 +70,8 @@ export default class HexCell extends Component {
         <div className="hex-cell__coordinate hex-cell__coordinate--x">{this.props.coordinates.x}</div>
         <div className="hex-cell__coordinate hex-cell__coordinate--y">{this.props.coordinates.y}</div>
         <div className="hex-cell__coordinate hex-cell__coordinate--z">{this.props.coordinates.z}</div>
-        {tile.label == null ? null : (
-          <div className="hex-cell__label">{tile.label}</div>
+        {this.props.tile == null || this.props.tile.label == null ? null : (
+          <div className="hex-cell__label">{this.props.tile.label}</div>
         )}
         {!isCenter ? null : (
           <div className="hex-cell__outline" />

@@ -200,5 +200,97 @@
         }
       ]
     }
+  ],
+  "systems": [
+    {
+      "label": "Goreal",
+      "hash": "GOREAL",
+      "coordinates": {
+        "x": -6,
+        "y": 3,
+        "z": 3
+      }
+    },
+    {
+      "label": "Kurranis",
+      "hash": "KURRANIS",
+      "coordinates": {
+        "x": -5,
+        "y": -1,
+        "z": 6
+      }
+    },
+    {
+      "label": "Pestilence",
+      "hash": "PESTILENCE",
+      "coordinates": {
+        "x": -4,
+        "y": 0,
+        "z": 4
+      }
+    },
+    {
+      "label": "Emerald",
+      "hash": "EMERALD",
+      "coordinates": {
+        "x": -2,
+        "y": -4,
+        "z": 6
+      }
+    },
+    {
+      "label": "Deadrock",
+      "hash": "DEADROCK",
+      "coordinates": {
+        "x": -1,
+        "y": 5,
+        "z": -4
+      }
+    },
+    {
+      "label": "Lothal",
+      "hash": "LOTHAL",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "label": "Callous",
+      "hash": "CALLOUS",
+      "coordinates": {
+        "x": 3,
+        "y": -5,
+        "z": 2
+      }
+    },
+    {
+      "label": "Hope",
+      "hash": "HOPE",
+      "coordinates": {
+        "x": 6,
+        "y": -4,
+        "z": -2
+      }
+    },
+    {
+      "label": "Star Cluster A",
+      "hash": "STARCLUSTER",
+      "coordinates": {
+        "x": -3,
+        "y": 3,
+        "z": 0
+      }
+    },
+    {
+      "label": "Star Cluster B",
+      "hash": "STARCLUSTER",
+      "coordinates": {
+        "x": -7,
+        "y": 6,
+        "z": 1
+      }
+    }
   ]
 }

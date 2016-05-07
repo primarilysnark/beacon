@@ -13,6 +13,8 @@ function mapStateToProps({ map, tiles }, ownProps) {
     topRight: false,
   };
 
+  const systems = map.systems.filter(system => system.coordinates.x === ownProps.coordinates.x && system.coordinates.y === ownProps.coordinates.y && system.coordinates.z === ownProps.coordinates.z);
+
   for (let routeIndex = 0; routeIndex < map.routes.length; routeIndex++) {
     const route = map.routes[routeIndex];
     let pastPoint = route.points[0];
@@ -44,7 +46,7 @@ function mapStateToProps({ map, tiles }, ownProps) {
     center: map.center,
     edges,
     routes,
-    tiles,
+    tile: systems.length ? systems[0] : null,
   };
 }
 

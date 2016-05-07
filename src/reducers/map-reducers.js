@@ -20,12 +20,3 @@ export function map(state = {}, action) {
       return state;
   }
 }
-
-export function tiles(state = {}, action) {
-  const { type } = action;
-
-  switch (type) {
-    default:
-      return state;
-  }
-}
